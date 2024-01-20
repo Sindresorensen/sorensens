@@ -1,0 +1,14 @@
+
+body {
+  text-align: center;
+  /* background-color: #FFFCF8; */
+  background-color: hsl(208, 27%, 40%);
+  overscroll-behavior: none;
+  /* font-family: 'Sarabun', sans-serif; */
+  font-family: 'Trirong', serif;
+}
+
+.location-info {
+  background-position: bottom 60% right 50%;
+}
+
