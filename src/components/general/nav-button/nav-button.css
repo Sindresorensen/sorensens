@@ -1,0 +1,9 @@
+.linkbtn {
+    background-size: 0 1px, auto;
+}
+
+
+.linkbtn:hover {
+    /* The following line makes the underline only as wide as the text */
+    background-size: 100% 1px, auto;
+}
