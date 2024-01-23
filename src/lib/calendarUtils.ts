@@ -91,7 +91,7 @@ export function createDownloadICSFile(event: CalendarEvent) {
     ].join('\n');
     
 
-    download(event.title + '.ics', icsBody);
+    download(event.title, icsBody);
 }
 
 
