@@ -37,7 +37,6 @@ const listsNynorsk: ListType[] = [
 ]
 
 
-/* NYNORSK DONE */
 function WishList() {
 
     const { isNynorsk } = useContext(LanguageContext);

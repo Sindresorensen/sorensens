@@ -3,7 +3,6 @@ import CountdownSection from "./CountdownSection";
 import { useContext } from "react";
 import { LanguageContext } from "@/App";
 
-/* NYNORSK DONE */
 function Countdown() {
 
     const { isNynorsk } = useContext(LanguageContext);

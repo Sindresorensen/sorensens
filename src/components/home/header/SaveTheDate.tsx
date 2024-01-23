@@ -19,7 +19,6 @@ const calendarEventNynorsk: CalendarEvent = {
     description: 'Hanna og Sindre giftar seg i Time kyrkje! Håpar du vil komma!',
 }
 
-/* NYNORSK DONE */
 function SaveTheDate() {
     const { isNynorsk } = useContext(LanguageContext);
 

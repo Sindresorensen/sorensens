@@ -11,7 +11,6 @@ import { LanguageContext } from "@/App";
 
 const password = "bryllupsfeber";
 
-/* NYNORSK DONE */
 export default function Login() {
 
     const { isNynorsk } = useContext(LanguageContext);

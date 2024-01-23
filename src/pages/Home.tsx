@@ -5,7 +5,6 @@ import LocationInfo from "@/components/home/body/LocationInfo";
 import Countdown from "@/components/home/body/countdown/Countdown";
 import Footer from "@/components/home/body/Footer";
 
-/* NYNORSK DONE */
 export default function Home() {
     return (
         <div>

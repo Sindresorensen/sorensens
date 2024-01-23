@@ -3,7 +3,6 @@ import { ListType } from "@/pages/WishList";
 import { Link } from "react-router-dom";
 
 
-/* NYNORSK DONE */
 function ListCard(props: { list: ListType }) {
 
     return (

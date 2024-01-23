@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 
 
-/* NYNORSK DONE */
 function Footer() {
 
     const scrollToTop = () => {

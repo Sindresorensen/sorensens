@@ -1,6 +1,5 @@
 import { ChevronDoubleDownIcon } from "@heroicons/react/24/outline";
 
-/* NYNORSK DONE */
 function PageDownToggle() {
 
     const handleDownClick = () => {

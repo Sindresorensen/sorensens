@@ -4,7 +4,6 @@ import NavButton from "@/components/general/nav-button/nav-button";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-/* NYNORSK DONE */
 function WelcomeBox() {
 
     const { isNynorsk } = useContext(LanguageContext);

@@ -2,7 +2,6 @@ import "@/App.css";
 import BgImage from "@/components/general/BgImage";
 import { useState, useEffect } from "react";
 
-/* NYNORSK DONE */
 export function HeaderImage() {
 
     const [opacity, setOpacity] = useState(60);

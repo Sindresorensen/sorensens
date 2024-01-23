@@ -3,7 +3,6 @@ import { CardContent } from "@/components/ui/card"
 import { useContext } from "react";
 import { LanguageContext } from "@/App";
 
-/* NYNORSK DONE */
 export default function ResponseForm() {
 
     const { isNynorsk } = useContext(LanguageContext);

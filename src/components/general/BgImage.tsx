@@ -1,6 +1,5 @@
 
 
-/* NYNORSK DONE */
 export default function BgImage( props: { image: string, opacity?: number, bottom?: number, right?: number } ) {
 
     const opacity = props.opacity ?? 60;

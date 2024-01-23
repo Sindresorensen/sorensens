@@ -14,7 +14,6 @@ type LocationBox = {
     link: string;
 }
 
-/* NYNORSK DONE */
 const LocationBox = (props: LocationBox) => {
     const { isNynorsk } = useContext(LanguageContext);
     return (
@@ -92,7 +91,6 @@ const LocationBox = (props: LocationBox) => {
 }
 
 
-/* NYNORSK DONE */
 function LocationInfo() {
     const { isNynorsk } = useContext(LanguageContext);
     return (

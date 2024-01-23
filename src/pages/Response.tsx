@@ -12,7 +12,6 @@ import { useContext } from "react";
 import { LanguageContext } from "@/App";
 import { isLoggedIn } from "@/lib/utils";
 
-/* NYNORSK DONE */
 function Response() {
 
     const { isNynorsk } = useContext(LanguageContext);

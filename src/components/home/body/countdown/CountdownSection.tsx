@@ -4,7 +4,6 @@ type CountdownSectionProps = {
     caption: string;
 }
 
-/* NYNORSK DONE */
 function CountdownSection(props: CountdownSectionProps) {
 
     return (
