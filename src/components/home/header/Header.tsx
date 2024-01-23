@@ -7,7 +7,7 @@ import SaveTheDate from "./SaveTheDate";
 export function Header() {
 
     return (
-        <div className="bg-black z-0 h-[100vh] overscroll-contain w[100vw] relative"> {/* Black for filter effect */}
+        <div className="bg-black z-0 h-screen overscroll-contain w[100vw] relative"> {/* Black for filter effect */}
 
             {/* Headline */}
             <div className="absolute flex flex-col items-center top-[12vh] md:top-[10vh] w-full z-10">
