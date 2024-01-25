@@ -1,6 +1,6 @@
 import './App.css'
 import { createContext, useState } from 'react';
-import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 import { Button } from './components/ui/button';
 import { Navbar } from './components/general/Navbar';
 import Home from './pages/Home';
@@ -63,16 +63,14 @@ export default function App() {
 
   return (
     <LanguageContext.Provider value={{ isNynorsk, handleSetIsNynorsk }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/wish_list" element={<WishList />} />
-            <Route path="/response" element={<Response />} />
-          </Route>
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/wish_list" element={<WishList />} />
+          <Route path="/response" element={<Response />} />
+        </Route>
+        <Route path="*" element={<NoPage />} />
+      </Routes>
     </LanguageContext.Provider>
   );
 }
