@@ -45,7 +45,7 @@ function WelcomeBox() {
                 </div>
 
                 <img 
-                    src="../public/images/IMG_0242.JPG" 
+                    src="/images/IMG_0242.JPG" 
                     alt="Image not found :(" 
                     className="object-cover w-full md:w-2/3 m-auto xl:m-0 xl:w-5/12 mt-10" 
                 />
