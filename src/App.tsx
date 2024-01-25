@@ -9,12 +9,12 @@ import Response from './pages/Response';
 import BgImage from './components/general/BgImage';
 import { findIsNynorsk } from './lib/utils';
 import { setLanguageCookie } from './lib/cookiesUtils';
-import image from '../public/images/IMG_0183-nobg.png';
+import image from '/images/IMG_0183-nobg.png';
 
 
 const NoPage = () => {
   return (
-    <div className=" text-classicwhite bg-cover bg-[url('../public/images/sky.JPG')] h-screen">
+    <div className=" text-classicwhite bg-cover bg-[url('/images/sky.JPG')] h-screen">
       <div className="pt-[20vh] flex flex-col items-center gap-10 text-black">
         <div className="flex flex-col items-center gap-4">
           <p className="text-6xl">OoOops!</p>

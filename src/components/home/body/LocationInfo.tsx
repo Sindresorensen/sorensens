@@ -97,7 +97,7 @@ function LocationInfo() {
         <div className="bg-black overflow-hidden flex items-center h-auto min-h-[75vh] m-auto relative py-8 md:py-0">
 
             {/* Image */}
-            <div className=" absolute z-10 h-full w-full bg-[url('../public/images/sky.JPG')] md:bg-[url('../public/images/IMG_0205.JPG')] bg-cover bg-center opacity-80" />
+            <div className=" absolute z-10 h-full w-full bg-[url('/images/sky.JPG')] md:bg-[url('/images/IMG_0205.JPG')] bg-cover bg-center opacity-80" />
 
             <div className="flex flex-col md:flex-row z-20 w-[88%] m-auto justify-between items-center gap-8 md:gap-0">
                 <LocationBox

@@ -24,7 +24,7 @@ export default function ResponseForm() {
                     />}
                 </div>
                 <div className=" w-full h-60 bg-white  rounded-b-md flex items-end justify-center">
-                    <div className="h-[90%] w-80 bg-white rounded-b-md bg-cover bg-center bg-[url('../public/images/IMG_0183-nobg.png')]" />
+                    <div className="h-[90%] w-80 bg-white rounded-b-md bg-cover bg-center bg-[url('/images/IMG_0183-nobg.png')]" />
                 </div>
             </div>
         </CardContent>
