@@ -33,8 +33,8 @@ const Layout = () => {
   return (
     <>
     <Navbar />
-    {/* TODO: Consider image -> IMG_0220 */}
-    <BgImage image="/darkened/background-darken.JPG" right={50} opacity={100} />
+    {/* consider: background-darken */}
+    <BgImage image="/darkened/IMG_0220.JPG" right={50} opacity={100} />
     <Outlet />
     </>
   );
