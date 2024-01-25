@@ -9,20 +9,23 @@ import Response from './pages/Response';
 import BgImage from './components/general/BgImage';
 import { findIsNynorsk } from './lib/utils';
 import { setLanguageCookie } from './lib/cookiesUtils';
+import image from '../public/images/IMG_0183-nobg.png';
 
 
 const NoPage = () => {
   return (
-    <div className=" text-classicwhite">
-      <div className="mt-[20vh] flex flex-col items-center gap-10">
+    <div className=" text-classicwhite bg-cover bg-[url('../public/images/sky.JPG')] h-screen">
+      <div className="pt-[20vh] flex flex-col items-center gap-10 text-black">
         <div className="flex flex-col items-center gap-4">
           <p className="text-6xl">OoOops!</p>
           <p className="text-lg  opacity-80">Her er det dessverre ingen side å hente!</p>
         </div>
         <div>
-          <Link to="/"><Button variant={"outline"} className="text-lg px-10 py-6">Gå hjem</Button></Link>
+          <Link to="/">
+            <Button variant={"outline"} className="text-lg border-2 border-black hover:text-white hover:bg-black px-10 py-6">Gå hjem</Button>
+          </Link>
         </div>
-      <img src="./src/assets/images/IMG_0183-nobg.png" className=" h-64 bg-cover" />
+      <img src={image} className=" h-64 bg-cover" />
       </div>
     </div>
   )
@@ -34,7 +37,7 @@ const Layout = () => {
     <>
     <Navbar />
     {/* consider: background-darken */}
-    <BgImage image="/darkened/IMG_0220.JPG" right={50} opacity={100} />
+    <BgImage image="/darkened/IMG_0220-darken.JPG" right={50} opacity={100} />
     <Outlet />
     </>
   );

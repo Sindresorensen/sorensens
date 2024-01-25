@@ -10,7 +10,7 @@ export default function BgImage( props: { image: string, opacity?: number, botto
         <>
         <div className=" fixed h-full z-0 w-full bg-cover bg-center"
             style={{ 
-                backgroundImage: `url('./src/assets/images/${props.image}')`,
+                backgroundImage: `url('../public/images/${props.image}')`,
                 opacity: `${opacity}%`,
                 backgroundPosition: `bottom ${bottom}% right ${right}%`
             }}

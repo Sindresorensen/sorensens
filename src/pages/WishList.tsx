@@ -43,7 +43,7 @@ function WishList() {
     return(
         <div className="z-0 w-full h-full fixed overflow-x-hidden overflow-y-scroll bg-cover flex flex-col gap-20"
             style={{ 
-                backgroundImage: "url('./src/assets/images/darkened/IMG_0229-darken.JPG')",
+                backgroundImage: "url('../public/images/darkened/IMG_0229-darken.JPG')",
                 backgroundPosition: `bottom ${85}% right ${50}%`
             }}
         >
