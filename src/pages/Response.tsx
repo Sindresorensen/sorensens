@@ -57,7 +57,7 @@ function Response() {
 
             
             {/* Div placed in right top corner */}
-            {isLoggedIn() && <div className="flex absolute right-20 sm:right-8 top-6 sm:top-20 z-20 items-center gap-8">
+            {isLoggedIn() && <div className="flex absolute right-20 sm:right-8 top-6 sm:top-20 z-30 items-center gap-8">
                 <Button 
                     variant={"outline"} 
                     className="text-white px-8"
