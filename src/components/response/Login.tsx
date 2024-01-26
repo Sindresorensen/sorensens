@@ -40,8 +40,8 @@ export default function Login() {
 
             <div className=" flex flex-col items-center gap-8 md:gap-6 my-6 md:m-16">
                 {isNynorsk ?
-                <p>Dersom du er invitert i bryllaupsfesten har du fått eit <u>passord</u> i invitasjonen!</p> :
-                <p>Dersom du er invitert i bryllupsfesten har du fått et <u>passord</u> i invitasjonen!</p>
+                <p>Dersom du er invitert til bryllaupsfesten har du fått eit <u>passord</u> i invitasjonen!</p> :
+                <p>Dersom du er invitert til bryllupsfesten har du fått et <u>passord</u> i invitasjonen!</p>
                 }
 
                 <div className="flex flex-col md:flex-row items-start md:gap-4 w-10/12 md:w-auto ">

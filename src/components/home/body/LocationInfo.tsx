@@ -111,7 +111,7 @@ function LocationInfo() {
                 <LocationBox
                     eventType={isNynorsk ? "Bryllaupsfest" : "Bryllupsfest"}
                     iconChurch={false}
-                    location={isNynorsk ? "Kvalbein gard" : "Kvalben gård"}
+                    location={isNynorsk ? "Jærgarden Kvalbein" : "Jærgarden Kvalbein"}
                     link="https://maps.app.goo.gl/LNxRmSNP9suvANjv7"
                     time="17:00"
                 />

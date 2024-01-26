@@ -19,21 +19,21 @@ function WelcomeBox() {
                     {isNynorsk ? 
                     /* Nynorsk */
                     <p className="text-white text-lg font-extralight w-full lg:w-[85%]">
-                        Me giftar oss 07. september i Time kyrkje og håpar du vil vera med å feira den store dagen saman med oss. 
-                        På denne sida finn du nyttig informasjon om tid og stad, og dessutan ønskelister og meir.
+                        Me giftar oss 07. september i Time kyrkje og håper du vil vere med å feire den store dagen saman med oss.
+                        På denne sida finn du nyttig informasjon om tid og stad, ønskelister og meir.
                         Under fanen&nbsp;
                         <span>
                             <Link to="/response">
                                 <NavButton color="white" className="text-lg font-extralight">svar utbes</NavButton>
                             </Link>
                         </span>
-                        &nbsp;har du òg moglegheit til å svara på invitasjonen. Me gler oss!
+                        &nbsp;har du òg moglegheit til å svare på invitasjonen. Me gler oss!
                     </p>
                     :
                     /* Bokmål */
                     <p className="text-white text-lg font-extralight w-full lg:w-[85%]">
                         Vi gifter oss 07. september i Time kyrkje og håper du vil være med å feire den store dagen sammen med oss. 
-                        På denne siden finner du nyttig informasjon om tid og sted, samt ønskelister og mer. 
+                        På denne siden finner du nyttig informasjon om tid og sted, ønskelister og mer.
                         Under fanen&nbsp;
                         <span>
                             <Link to="/response">

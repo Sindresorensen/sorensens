@@ -31,7 +31,7 @@ function Response() {
                     {isNynorsk ? 
                     <p className="text-classicwhite text-md md:font-extralight mx-10 md:w-[30rem] xl:w-[38rem] ">
                         Her vil me gjerne at du skal svara på om du kjem i bryllaupet eller ikkje og eventuelle matomsyn.
-                        Me håpar du vil komma og feira dagen med oss!
+                        Me håper du vil komme og feire dagen med oss!
                     </p> :
                     <p className="text-classicwhite text-md md:font-extralight mx-10 md:w-[30rem] xl:w-[38rem] ">
                         Her vil vi gjerne at du skal svare på om du kommer i bryllupet eller ikke og eventuelle mathensyn. 

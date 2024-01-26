@@ -16,7 +16,7 @@ const calendarEventNynorsk: CalendarEvent = {
     startTime: new Date(2024, 8, 7, 14, 0),
     endTime: new Date(2024, 8, 7, 15, 0),
     title: 'Hanna og Sindre giftar seg!',
-    description: 'Hanna og Sindre giftar seg i Time kyrkje! Håpar du vil komma!',
+    description: 'Hanna og Sindre giftar seg i Time kyrkje! Håper du vil komme!',
 }
 
 function SaveTheDate() {

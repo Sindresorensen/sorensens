@@ -26,12 +26,12 @@ const lists: ListType[] = [
 const listsNynorsk: ListType[] = [
     {
         name: "Kitch'n",
-        description: "Her har me samla det me ønskjer oss frå Kitch'n. Mange av produkta finst òg hos Tilbords!",
+        description: "Her har me samla det me ønsker oss frå Kitch'n. Mange av produkta finst òg hos Tilbords!",
         link: "https://www.kitchn.no/bryllup/179312"
     },
     {
         name: "Generell ønskeliste",
-        description: "Her er ei samla ønskeliste med produkt me ønskjer oss frå ulike butikkar.",
+        description: "Her er ei samla ønskeliste med produkt me ønsker oss frå ulike butikkar.",
         link: "https://onskelister.no/liste?id=8bZLMTJcU9tDfIJ0YPIF"
     }
 ]
