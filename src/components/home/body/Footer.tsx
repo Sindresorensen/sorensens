@@ -9,14 +9,14 @@ function Footer() {
     }
 
     return (
-        <div className="  w-full flex items-center justify-between h-[20vh] text-classicwhite relative ">
+        <div className="  w-full flex flex-col sm:flex-row items-center justify-between sm:h-[20vh] text-classicwhite relative gap-10">
 
-            <div className=" ml-2 sm:ml-28 flex flex-col justify-end h-full pb-4">
+            <div className=" sm:ml-28 flex flex-col justify-end h-full sm:pb-6 ">
                 <p className="font-tangerine opacity-80 text-4xl text-white">Hanna & Sindre</p>
-
+                <p className="text-xs opacity-50">- Laget av Sindre Sørensen -</p>
             </div>
 
-            <div className=" mr-4 sm:mr-12">
+            <div className=" sm:mr-12 mb-4 sm:mb-0">
                 <Button variant={"outline"} className="flex items-center gap-1.5" 
                     onClick={scrollToTop}
                 >
