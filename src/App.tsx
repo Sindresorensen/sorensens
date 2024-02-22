@@ -37,7 +37,7 @@ const Layout = () => {
     <>
     <Navbar />
     {/* consider: background-darken */}
-    <BgImage image="/darkened/IMG_0220-darken.JPG" right={50} opacity={100} />
+    <BgImage image="/darkened/IMG_0220-darken.JPG" right={50} />
     <Outlet />
     </>
   );
