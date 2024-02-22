@@ -1,6 +1,7 @@
 
 
 import { LanguageContext } from "@/App";
+import BgImage from "@/components/general/BgImage";
 import ListCard from "@/components/wishlist/ListCard";
 import { useContext } from "react";
 
@@ -41,18 +42,13 @@ function WishList() {
 
     const { isNynorsk } = useContext(LanguageContext);
     return(
-        <div className="z-0 w-full h-full fixed overflow-x-hidden overflow-y-scroll bg-cover flex flex-col gap-20"
-            style={{ 
-                backgroundImage: "url('/images/darkened/IMG_0229-darken.JPG')",
-                backgroundPosition: `bottom ${85}% right ${50}%`
-            }}
-        >
+        <div className=" z-0 flex flex-col gap-20 bg-fade-in h-screen overscroll-contain w-full relative opacity-100 bg-black">
             
-            <div className=" text-center mt-[10vh] w-full">
+            <div className=" text-center mt-[10vh] w-full z-20">
                 <p className="font-tangerine text-8xl text-white">Ønskelister</p>
             </div>
             
-            <div className=" h-auto mb-20">
+            <div className=" h-auto mb-20 z-20">
                 {isNynorsk ? 
                 <div className=" flex flex-col lg:flex-row items-center justify-center md:justify-evenly md:mx-20 gap-10 lg:gap-20 z-20">
                     {listsNynorsk.map( (list, index) => (
@@ -64,7 +60,8 @@ function WishList() {
                         <ListCard key={index} list={list} />
                     ))}
                 </div>}
-        </div>
+            </div>
+            <BgImage image="darkened/IMG_0229-darken.JPG" opacity={100} />
         </div>
     );
 }
