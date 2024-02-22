@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 
 export function HeaderImage() {
 
-    const [opacity, setOpacity] = useState(60);
+    const [opacity, setOpacity] = useState(100);
 
     const handleScroll = () => {
         const fromTop = Math.abs(document.body.getBoundingClientRect().top);
         if (fromTop === 0) {
-            setOpacity(60);
+            setOpacity(100);
         } else {
             setOpacity(opacity - (fromTop / 16));
         }
@@ -23,7 +23,7 @@ export function HeaderImage() {
     }, []);
 
     return (
-        <BgImage image="IMG_0193.JPG" opacity={opacity} />
+        <BgImage image="darkened/IMG_0193-darken.JPG" opacity={opacity} />
     );
 }
 

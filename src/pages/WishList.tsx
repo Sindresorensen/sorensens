@@ -61,7 +61,7 @@ function WishList() {
                     ))}
                 </div>}
             </div>
-            <BgImage image="darkened/IMG_0229-darken.JPG" opacity={100} />
+            <BgImage image="darkened/IMG_0229-darken.JPG" />
         </div>
     );
 }
