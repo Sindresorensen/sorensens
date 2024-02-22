@@ -81,6 +81,12 @@
 
 /* utils */
 
+/* Rounded border */
+.rounded-xs { border-radius: 0.125rem }
+
+/* Darkened color */
+.border-dark { border-color: #090E2B }
+
 /* True Blue colors */
 .bg-trueblue { background-color: #4A6882; }
 .border-trueblue { border-color: #4A6882; }

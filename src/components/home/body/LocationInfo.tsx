@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { LanguageContext } from "@/App";
 
 
-type LocationBox = {
+type LocationBoxProps = {
     eventType: string;
     iconChurch: boolean;
     location: string;
@@ -14,24 +14,24 @@ type LocationBox = {
     link: string;
 }
 
-const LocationBox = (props: LocationBox) => {
+const LocationBox = (props: LocationBoxProps) => {
     const { isNynorsk } = useContext(LanguageContext);
     return (
-        <div className="xl:mb-20 h-1/2 md:h-96 w-full overflow-hidden md:w-72 bg-white bg-opacity-90 md:bg-opacity-70 border-2 rounded-sm border-trueblue text-black">
+        <div className="xl:mb-20 h-1/2 md:h-96 w-full overflow-hidden md:w-72 bg-white bg-opacity-90 md:bg-opacity-70 border rounded-xs border-dark text-black">
 
             <div className="md:hidden my-2 ml-6 mr-4 flex flex-col gap-8 ">
                 <div className=" flex items-center gap-3 justify-between ">
 
-                    <div className="flex flex-col gap-0">
-                        <p className=" text-3xl">{props.location}</p>
-                        <p className="flex items-center gap-2">
+                    <div className="flex flex-col gap-0 ">
+                        <p className=" text-xl text-left ">{props.location}</p>
+                        <p className="flex items-center gap-2 ">
                             <p>{props.eventType}</p>
                             <p className="font-extralight">|</p>
                             <p>{props.time}</p>
                         </p>
                     </div>
 
-                    <div>
+                    <div className="truncate">
                         {props.iconChurch ? 
                         <ChurchIcon size={80} strokeWidth={.2} /> :
                         <PartyPopperIcon size={80} strokeWidth={.2} />}
