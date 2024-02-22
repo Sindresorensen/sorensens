@@ -1,24 +1,5 @@
 import Cookies from 'js-cookie';
 
-
-/* Logged in-cookies */
-
-const LOGIN_COOKIE_KEY = 'is_logged_in';
-
-export const setLoggedInCookie = (isLoggedIn: boolean): void => {
-    Cookies.set(LOGIN_COOKIE_KEY, isLoggedIn.toString(), { expires: 7});
-}
-
-export const getIsLoggedInCookie = (): string | undefined => {
-    return Cookies.get(LOGIN_COOKIE_KEY);
-}
-
-export const deleteLoggedInCookie = (): void => {
-    Cookies.remove(LOGIN_COOKIE_KEY);
-    location.reload();
-}
-
-
 /* Language cookies */
 
 // Cookie-nøkkel som skal brukes for å lagre språkvalg
