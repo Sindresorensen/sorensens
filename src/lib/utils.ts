@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { getIsLoggedInCookie, getLanguageCookie } from "./cookiesUtils";
+import { getLanguageCookie } from "./cookiesUtils";
  
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -13,8 +13,4 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function findIsNynorsk(): boolean {
     return getLanguageCookie() === 'nn';
-}
-
-export function isLoggedIn(): boolean {
-  return getIsLoggedInCookie() === 'true';
 }

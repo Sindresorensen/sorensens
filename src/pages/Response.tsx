@@ -1,8 +1,5 @@
 import BgImage from "@/components/general/BgImage";
-import Login from "@/components/response/Login";
 import ResponseForm from "@/components/response/ResponseForm";
-import { Button } from "@/components/ui/button";
-import { deleteLoggedInCookie } from "@/lib/cookiesUtils";
 import {
     Card,
     CardHeader,
@@ -10,7 +7,6 @@ import {
 } from "@/components/ui/card"
 import { useContext } from "react";
 import { LanguageContext } from "@/App";
-import { isLoggedIn } from "@/lib/utils";
 
 function Response() {
 
@@ -40,31 +36,15 @@ function Response() {
 
                 </div>
 
-                {/* Login-page or response-form */}
                 <Card className=" w-11/12 md:w-[60vw] font-sarabun bg-white text-black  rounded-sm mb-20">
-                    {!isLoggedIn() && <Login />}
-                    {isLoggedIn() && 
-                    <>
-                        <CardHeader className="text-left mt-10 mx-4 md:mx-12">
-                            <CardTitle className="font-normal">{title}</CardTitle>
-                        </CardHeader>
-                        
-                        <ResponseForm />
-                    </>}
+                    <CardHeader className="text-left mt-10 mx-4 md:mx-12">
+                        <CardTitle className="font-normal">{title}</CardTitle>
+                    </CardHeader>
+                    
+                    <ResponseForm />
                 </Card>
 
             </div>
-
-            
-            {/* Div placed in right top corner */}
-            {isLoggedIn() && <div className="flex absolute right-20 sm:right-8 top-6 sm:top-20 z-30 items-center gap-8">
-                <Button 
-                    variant={"outline"} 
-                    className="text-white px-8"
-                    onClick={deleteLoggedInCookie}
-                >Logg ut</Button>
-            </div>}
-            
 
             {/* Fixed background */}
             <div className=" fixed h-full w-full bg-black" />
