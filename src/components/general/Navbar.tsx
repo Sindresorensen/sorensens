@@ -15,7 +15,6 @@ import { LanguageContext } from "@/App";
 import { cn } from "@/lib/utils";
   
 
-// @ts-expect-error
 const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
     return (
         <div className=" text-black bg-transparent pt-20">
@@ -49,6 +48,7 @@ const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
     );
 }
 
+// @ts-expect-error
 const HamburgerMenuContent = ({isNynorsk}: {isNynorsk: boolean}) => {
     return (
         <div className=" text-black bg-transparent pt-20">
@@ -82,7 +82,7 @@ const HamburgerMenu = ({isNynorsk}: {isNynorsk: boolean}) => {
                 </div>
             </SheetTrigger>
             <SheetContent>
-                <HamburgerMenuContent isNynorsk={isNynorsk} />
+                <HamburgerMenuContentWithIcons isNynorsk={isNynorsk} />
             </SheetContent>
         </Sheet>
     );
