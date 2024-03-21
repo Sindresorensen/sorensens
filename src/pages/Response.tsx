@@ -5,10 +5,15 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LanguageContext } from "@/App";
 
 function Response() {
+
+    // On mount
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+    })
 
     const { isNynorsk } = useContext(LanguageContext);
     const title = isNynorsk ? 

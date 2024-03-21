@@ -1,6 +1,5 @@
 import { LanguageContext } from "@/App";
 import "@/App.css";
-import NavButton from "@/components/general/nav-button/nav-button";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,26 +20,27 @@ function WelcomeBox() {
                     <p className="text-white text-lg font-extralight w-full lg:w-[85%]">
                         Me giftar oss 07. september i Time kyrkje og håper du vil vere med å feire den store dagen saman med oss.
                         På denne sida finn du nyttig informasjon om tid og stad, ønskelister og meir.
-                        Under fanen&nbsp;
-                        <span>
-                            <Link to="/response">
-                                <NavButton color="white" className="text-lg font-extralight">svar utbes</NavButton>
-                            </Link>
-                        </span>
-                        &nbsp;har du òg moglegheit til å svare på invitasjonen. Me gler oss!
+                        Under fanen&nbsp;&nbsp;<Link to="/su"><span className="underline underline-offset-2">svar utbes</span></Link>
+                        &nbsp;har du òg moglegheit til å svare på invitasjonen. 
+                        <br /><br />
+                        Dersom du ønsker å halde ein tale eller bidra med annan underhaldning, kan du ta&nbsp;
+                        <Link to="/kontakt"><span className="underline underline-offset-2">kontakt</span></Link>
+                        &nbsp;med våre toastmeistrar. 
+                        Dersom du ønsker å bidra med andre ting, er du velkomen til å ta kontakt med oss!
+                        <b> Me gler oss!</b>
                     </p>
                     :
                     /* Bokmål */
                     <p className="text-white text-lg font-extralight w-full lg:w-[85%]">
                         Vi gifter oss 07. september i Time kyrkje og håper du vil være med å feire den store dagen sammen med oss. 
                         På denne siden finner du nyttig informasjon om tid og sted, ønskelister og mer.
-                        Under fanen&nbsp;
-                        <span>
-                            <Link to="/response">
-                                <NavButton color="white" className="text-lg font-extralight">svar utbes</NavButton>
-                            </Link>
-                        </span>
-                        &nbsp;har du også mulighet til å svare på invitasjonen. Vi gleder oss!
+                        Under fanen&nbsp;<Link to="/su"><span className="underline underline-offset-2">svar utbes</span></Link>
+                        &nbsp;har du også mulighet til å svare på invitasjonen.
+                        <br /><br />
+                        Dersom du ønsker å holde en tale eller bidra med annen underholdning, kan du ta&nbsp;
+                        <Link to="/kontakt"><span className="underline underline-offset-2">kontakt</span></Link>
+                        &nbsp;med våre toastmastere. Dersom du ønsker å bidra med andre ting kan du ta kontakt med oss!
+                        <b> Vi gleder oss!</b>
                     </p>}
                 </div>
 
@@ -52,7 +52,7 @@ function WelcomeBox() {
 
             </div>
         </div>
-    )
+    );
 }
 
 export default WelcomeBox;

@@ -10,6 +10,8 @@ import BgImage from './components/general/BgImage';
 import { findIsNynorsk } from './lib/utils';
 import { setLanguageCookie } from './lib/cookiesUtils';
 import image from '/images/IMG_0183-nobg.png';
+import UploadPhoto from './UploadPhoto';
+import Contact from './pages/Contact';
 
 
 const NoPage = () => {
@@ -66,8 +68,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/wish_list" element={<WishList />} />
-          <Route path="/response" element={<Response />} />
+          <Route path="/onskelister" element={<WishList />} />
+          <Route path="/su" element={<Response />} />
+          <Route path="/last_opp" element={<UploadPhoto />} />
+          <Route path="/kontakt" element={<Contact />} />
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

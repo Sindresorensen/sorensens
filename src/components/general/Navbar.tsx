@@ -1,16 +1,12 @@
 import "@/App.css";
 import NavButton from "@/components/general/nav-button/nav-button";
 import { Link } from "react-router-dom";
-import { Bars3Icon, EnvelopeIcon, GiftIcon, HomeIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, EnvelopeIcon, GiftIcon, HomeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useContext, useEffect, useState } from "react";
 import LanguageToggle from "../home/header/LanguageToggle";
 import SaveTheDate from "../home/header/SaveTheDate";
 import { Close } from "@radix-ui/react-dialog";
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageContext } from "@/App";
 import { cn } from "@/lib/utils";
   
@@ -28,18 +24,26 @@ const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
                     </Link>
                 </Close>
                 <Close asChild>
-                    <Link to="/wish_list">
+                    <Link to="/onskelister">
                         <div className="flex items-end gap-4">
-                            <NavButton color="black" className="uppercase font-semibold text-lg">Ønskeliste</NavButton>
+                            <NavButton color="black" className="uppercase font-semibold text-lg">Ønskelister</NavButton>
                             <GiftIcon className="h-6" />
                         </div>
                     </Link>
                 </Close>
                 <Close asChild>
-                    <Link to="/response">
+                    <Link to="/su">
                         <div className="flex items-end gap-4">
                             <NavButton color="black" className="uppercase font-semibold text-lg">Svar utbes</NavButton>
                             <EnvelopeIcon className="h-6" />
+                        </div>
+                    </Link>
+                </Close>
+                <Close asChild>
+                    <Link to="/kontakt">
+                        <div className="flex items-end gap-4">
+                            <NavButton color="black" className="uppercase font-semibold text-lg">Kontakt</NavButton>
+                            <PhoneIcon className="h-6" />
                         </div>
                     </Link>
                 </Close>
@@ -59,12 +63,12 @@ const HamburgerMenuContent = ({isNynorsk}: {isNynorsk: boolean}) => {
                     </Link>
                 </Close>
                 <Close asChild>
-                    <Link to="/wish_list">
-                        <NavButton color="black" className="uppercase font-semibold text-lg">Ønskeliste</NavButton>
+                    <Link to="/onskelister">
+                        <NavButton color="black" className="uppercase font-semibold text-lg">Ønskelister</NavButton>
                     </Link>
                 </Close>
                 <Close asChild>
-                    <Link to="/response">
+                    <Link to="/su">
                         <NavButton color="black" className="uppercase font-semibold text-lg">Svar utbes</NavButton>
                     </Link>
                 </Close>
@@ -150,11 +154,14 @@ export function Navbar() {
                 <Link to="/">
                     <NavButton color="white" className="uppercase font-extralight">{isNynorsk ? "Heim" : "Hjem"}</NavButton>
                 </Link>
-                <Link to="/wish_list">
-                    <NavButton color="white" className="uppercase font-extralight">Ønskeliste</NavButton>
+                <Link to="/onskelister">
+                    <NavButton color="white" className="uppercase font-extralight">Ønskelister</NavButton>
                 </Link>
-                <Link to="/response">
+                <Link to="/su">
                     <NavButton color="white" className="uppercase font-extralight">Svar utbes</NavButton>
+                </Link>
+                <Link to="/kontakt">
+                    <NavButton color="white" className="uppercase font-extralight">Kontakt</NavButton>
                 </Link>
             </div>
             <div className=" flex z-20 items-center gap-8">
