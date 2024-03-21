@@ -2,6 +2,7 @@
 
 import { LanguageContext } from "@/App";
 import BgImage from "@/components/general/BgImage";
+import Title from "@/components/general/Title";
 import ListCard from "@/components/wishlist/ListCard";
 import { useContext } from "react";
 
@@ -44,8 +45,8 @@ function WishList() {
     return(
         <div className=" z-0 flex flex-col gap-20 bg-fade-in h-screen overscroll-contain w-full relative opacity-100 bg-black">
             
-            <div className=" text-center mt-[10vh] w-full z-20">
-                <p className="font-tangerine text-8xl text-white">Ønskelister</p>
+            <div className=" text-center mt-24 w-full z-20">
+                <Title>Ønskelister</Title>
             </div>
             
             <div className=" h-auto mb-20 z-20">

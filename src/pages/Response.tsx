@@ -7,13 +7,14 @@ import {
 } from "@/components/ui/card"
 import { useContext, useEffect } from "react";
 import { LanguageContext } from "@/App";
+import Title from "@/components/general/Title";
 
 function Response() {
 
     // On mount
     useEffect(() => {
         window.scrollTo({ top: 0 });
-    })
+    });
 
     const { isNynorsk } = useContext(LanguageContext);
     const title = isNynorsk ? 
@@ -25,9 +26,9 @@ function Response() {
 
             {/* Header and information */}
             <div className="absolute flex flex-col items-center w-full z-10 gap-8 md:gap-16">
-                <div className="flex flex-col items-center mt-[10vh]  w-full gap-6">
+                <div className="flex flex-col items-center mt-24 w-full gap-6">
 
-                    <p className="font-tangerine text-8xl text-white">Svar utbes</p>
+                    <Title>Svar utbes</Title>
                     
                     {isNynorsk ? 
                     <p className="text-classicwhite text-md md:font-extralight mx-10 md:w-[30rem] xl:w-[38rem] ">
@@ -52,7 +53,6 @@ function Response() {
             </div>
 
             {/* Fixed background */}
-            <div className=" fixed h-full w-full bg-black" />
             <BgImage image="IMG_0292.JPG" bottom={100} />
         </div>
     )
