@@ -7,7 +7,7 @@ type CountdownSectionProps = {
 function CountdownSection(props: CountdownSectionProps) {
 
     return (
-        <div className="border-4 border-classicwhite text-classicwhite w-44 h-44 flex flex-col items-center justify-between">
+        <div className="border-2 border-classicwhite text-classicwhite w-44 h-44 flex flex-col items-center justify-between">
             
             <div className=" w-full h-full flex items-end justify-center">
                 <p className="text-5xl font-bold">{props.timeLeft}</p>

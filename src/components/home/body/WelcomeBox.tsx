@@ -11,7 +11,7 @@ function WelcomeBox() {
         <div className="xl:min-h-[80vh] h-auto xl:h-[60vh] bg-trueblue flex relative overflow-hidden">
             <div className=" my-10 mx-6 xl:mx-40 w-full flex flex-col xl:flex-row justify-between">
 
-                <div className=" w-full md:w-2/3 m-auto mt-4 xl:mt-8 flex flex-col justify-start text-left gap-6  ">
+                <div className=" w-full md:w-2/3 m-auto mt-4 xl:mt-8 flex flex-col justify-start text-center sm:text-left gap-6  ">
                     <p className="text-white text-4xl lg:text-6xl font-bold">
                         {isNynorsk ? "Velkommen til bryllaupet vårt!" : "Velkommen til vårt bryllup!"}
                     </p>

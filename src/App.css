@@ -6,7 +6,7 @@ body {
   background-color: hsl(208, 27%, 40%);
   overscroll-behavior: none;
   /* font-family: 'Sarabun', sans-serif; */
-  font-family: 'Trirong', serif
+  font-family: 'Trirong', serif;
 }
 
 .location-info {
