@@ -66,8 +66,8 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/su" element={<Response />} />
-          <Route path="/last_opp" element={<UploadPhoto />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/last_opp" element={<UploadPhoto />} />
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

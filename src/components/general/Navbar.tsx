@@ -1,7 +1,7 @@
 import "@/App.css";
 import NavButton from "@/components/general/nav-button/nav-button";
 import { Link } from "react-router-dom";
-import { Bars3Icon, EnvelopeIcon, GiftIcon, HomeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { ArrowUpTrayIcon, Bars3Icon, EnvelopeIcon, GiftIcon, HomeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useContext, useEffect, useState } from "react";
 import LanguageToggle from "../home/header/LanguageToggle";
 import SaveTheDate from "../home/header/SaveTheDate";
@@ -9,11 +9,12 @@ import { Close } from "@radix-ui/react-dialog";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageContext } from "@/App";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
   
 
 const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
     return (
-        <div className=" text-black bg-transparent pt-20">
+        <div className=" text-black bg-transparent pt-20 h-full flex flex-col justify-between">
             <div className="flex flex-col items-end mx-10 gap-10">
                 <Close asChild>
                     <Link to="/">
@@ -45,6 +46,19 @@ const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
                             <NavButton color="black" className="uppercase font-semibold text-lg">Ønskeliste</NavButton>
                             <GiftIcon className="h-6" />
                         </div>
+                    </Link>
+                </Close>
+            </div>
+
+            <div className="flex justify-center mb-3">
+                <Close asChild>
+                    <Link to="/last_opp">
+                        <Button variant={"outline"} className="border-black hover:bg-black hover:text-white py-6">
+                            <div className="flex gap-3 items-center">
+                                <ArrowUpTrayIcon className="h-6 text-black" />
+                                <p className="font-medium text-lg">Last opp bilde</p>
+                            </div>
+                        </Button>
                     </Link>
                 </Close>
             </div>
