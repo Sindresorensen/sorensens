@@ -58,7 +58,9 @@ export default function LocationBox() {
                 <p>//</p>
                 <Link to="/kontakt"><NavButton><i>Ta kontakt</i></NavButton></Link>
                 <p>//</p>
-                <Link to="/onskelister"><NavButton><i>Se ønskelister</i></NavButton></Link>
+                <Link to="https://www.onskelister.no/liste?id=8bZLMTJcU9tDfIJ0YPIF" target="_blank">
+                    <NavButton><i>Se ønskeliste</i></NavButton>
+                </Link>
             </div>
         </div>
     )

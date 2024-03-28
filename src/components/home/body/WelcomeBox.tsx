@@ -1,7 +1,6 @@
 import { LanguageContext } from "@/App";
 import "@/App.css";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 
 function WelcomeBox() {
 
@@ -19,12 +18,15 @@ function WelcomeBox() {
                     /* Nynorsk */
                     <p className="text-white text-lg font-extralight w-full lg:w-[85%]">
                         Me giftar oss 07. september i Time kyrkje og håper du vil vere med å feire den store dagen saman med oss.
-                        På denne sida finn du nyttig informasjon om tid og stad, ønskelister og meir.
-                        Under fanen&nbsp;&nbsp;<Link to="/su"><span className="underline underline-offset-2">svar utbes</span></Link>
+                        På denne sida finn du nyttig informasjon om tid og stad,&nbsp;
+                        <a href="https://www.onskelister.no/liste?id=8bZLMTJcU9tDfIJ0YPIF" target="_blank" className="underline underline-offset-2">
+                            ønskeliste
+                        </a>
+                        &nbsp;og meir. Under fanen&nbsp;<a href="/su" className="underline underline-offset-2">svar utbes</a>
                         &nbsp;har du òg moglegheit til å svare på invitasjonen. 
                         <br /><br />
                         Dersom du ønsker å halde ein tale eller bidra med annan underhaldning, kan du ta&nbsp;
-                        <Link to="/kontakt"><span className="underline underline-offset-2">kontakt</span></Link>
+                        <a href="/kontakt" className="underline underline-offset-2">kontakt</a>
                         &nbsp;med våre toastmeistrar. 
                         Dersom du ønsker å bidra med andre ting, er du velkomen til å ta kontakt med oss!
                         <b> Me gler oss!</b>
@@ -33,12 +35,15 @@ function WelcomeBox() {
                     /* Bokmål */
                     <p className="text-white text-lg font-extralight w-full lg:w-[85%]">
                         Vi gifter oss 07. september i Time kyrkje og håper du vil være med å feire den store dagen sammen med oss. 
-                        På denne siden finner du nyttig informasjon om tid og sted, ønskelister og mer.
-                        Under fanen&nbsp;<Link to="/su"><span className="underline underline-offset-2">svar utbes</span></Link>
+                        På denne siden finner du nyttig informasjon om tid og sted,&nbsp;
+                        <a href="https://www.onskelister.no/liste?id=8bZLMTJcU9tDfIJ0YPIF" target="_blank" className="underline underline-offset-2">
+                            ønskeliste
+                        </a>
+                        &nbsp;og mer. Under fanen&nbsp;<a href="/su" className="underline underline-offset-2">svar utbes</a>
                         &nbsp;har du også mulighet til å svare på invitasjonen.
                         <br /><br />
                         Dersom du ønsker å holde en tale eller bidra med annen underholdning, kan du ta&nbsp;
-                        <Link to="/kontakt"><span className="underline underline-offset-2">kontakt</span></Link>
+                        <a href="/kontakt" className="underline underline-offset-2">kontakt</a>
                         &nbsp;med våre toastmastere. Dersom du ønsker å bidra med andre ting kan du ta kontakt med oss!
                         <b> Vi gleder oss!</b>
                     </p>}
@@ -46,7 +51,7 @@ function WelcomeBox() {
 
                 <img 
                     src="/images/IMG_0242.JPG" 
-                    alt="Image not found :(" 
+                    alt="*Pent bilde av oss...*" 
                     className="object-cover w-full md:w-2/3 m-auto xl:m-0 xl:w-5/12 mt-10" 
                 />
 

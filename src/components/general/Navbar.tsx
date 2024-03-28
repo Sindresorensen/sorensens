@@ -24,14 +24,6 @@ const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
                     </Link>
                 </Close>
                 <Close asChild>
-                    <Link to="/onskelister">
-                        <div className="flex items-end gap-4">
-                            <NavButton color="black" className="uppercase font-semibold text-lg">Ønskelister</NavButton>
-                            <GiftIcon className="h-6" />
-                        </div>
-                    </Link>
-                </Close>
-                <Close asChild>
                     <Link to="/su">
                         <div className="flex items-end gap-4">
                             <NavButton color="black" className="uppercase font-semibold text-lg">Svar utbes</NavButton>
@@ -47,29 +39,12 @@ const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
                         </div>
                     </Link>
                 </Close>
-            </div>
-        </div>
-    );
-}
-
-// @ts-expect-error
-const HamburgerMenuContent = ({isNynorsk}: {isNynorsk: boolean}) => {
-    return (
-        <div className=" text-black bg-transparent pt-20">
-            <div className="flex flex-col items-center gap-10 mx-10">
                 <Close asChild>
-                    <Link to="/">
-                        <NavButton color="black" className="uppercase font-semibold text-lg">{isNynorsk ? "Heim" : "Hjem"}</NavButton>
-                    </Link>
-                </Close>
-                <Close asChild>
-                    <Link to="/onskelister">
-                        <NavButton color="black" className="uppercase font-semibold text-lg">Ønskelister</NavButton>
-                    </Link>
-                </Close>
-                <Close asChild>
-                    <Link to="/su">
-                        <NavButton color="black" className="uppercase font-semibold text-lg">Svar utbes</NavButton>
+                    <Link target="_blank" to="https://www.onskelister.no/liste?id=8bZLMTJcU9tDfIJ0YPIF">
+                        <div className="flex items-end gap-4">
+                            <NavButton color="black" className="uppercase font-semibold text-lg">Ønskeliste</NavButton>
+                            <GiftIcon className="h-6" />
+                        </div>
                     </Link>
                 </Close>
             </div>
@@ -154,14 +129,14 @@ export function Navbar() {
                 <Link to="/">
                     <NavButton color="white" className="uppercase font-extralight">{isNynorsk ? "Heim" : "Hjem"}</NavButton>
                 </Link>
-                <Link to="/onskelister">
-                    <NavButton color="white" className="uppercase font-extralight">Ønskelister</NavButton>
-                </Link>
                 <Link to="/su">
                     <NavButton color="white" className="uppercase font-extralight">Svar utbes</NavButton>
                 </Link>
                 <Link to="/kontakt">
                     <NavButton color="white" className="uppercase font-extralight">Kontakt</NavButton>
+                </Link>
+                <Link target="_blank" to="https://www.onskelister.no/liste?id=8bZLMTJcU9tDfIJ0YPIF">
+                    <NavButton color="white" className="uppercase font-extralight">Ønskeliste</NavButton>
                 </Link>
             </div>
             <div className=" flex z-20 items-center gap-8">

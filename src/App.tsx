@@ -4,9 +4,7 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 import { Button } from './components/ui/button';
 import { Navbar } from './components/general/Navbar';
 import Home from './pages/Home';
-import WishList from './pages/WishList';
 import Response from './pages/Response';
-import BgImage from './components/general/BgImage';
 import { findIsNynorsk } from './lib/utils';
 import { setLanguageCookie } from './lib/cookiesUtils';
 import image from '/images/IMG_0183-nobg.png';
@@ -38,16 +36,15 @@ const Layout = () => {
   return (
     <>
     <Navbar />
-    {/* consider: background-darken */}
-    <BgImage image="/darkened/IMG_0220-darken.JPG" right={50} />
+    {/* <BgImage image="darkened/IMG_0220-darken.JPG" right={50} /> */}
     <Outlet />
     </>
   );
 }
 
 type ContextType = {
-  isNynorsk: boolean;
-  handleSetIsNynorsk: (val: boolean) => void;
+    isNynorsk: boolean;
+    handleSetIsNynorsk: (val: boolean) => void;
 }
 
 
@@ -55,20 +52,19 @@ export const LanguageContext = createContext<ContextType>({isNynorsk: false, han
 
 export default function App() {
 
-  const [isNynorsk, setIsNynorsk] = useState<boolean>(findIsNynorsk());
-  const handleSetIsNynorsk = (isNynorsk: boolean) => {
-    // Update cookies
-    setLanguageCookie(isNynorsk ? 'nn' : 'nb');
-    // Update state
-    setIsNynorsk(isNynorsk);
-  }
+    const [isNynorsk, setIsNynorsk] = useState<boolean>(findIsNynorsk());
+    const handleSetIsNynorsk = (isNynorsk: boolean) => {
+        // Update cookies
+        setLanguageCookie(isNynorsk ? 'nn' : 'nb');
+        // Update state
+        setIsNynorsk(isNynorsk);
+    }
 
   return (
     <LanguageContext.Provider value={{ isNynorsk, handleSetIsNynorsk }}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/onskelister" element={<WishList />} />
           <Route path="/su" element={<Response />} />
           <Route path="/last_opp" element={<UploadPhoto />} />
           <Route path="/kontakt" element={<Contact />} />
