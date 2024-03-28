@@ -7,39 +7,39 @@ import Home from './pages/Home';
 import Response from './pages/Response';
 import { findIsNynorsk } from './lib/utils';
 import { setLanguageCookie } from './lib/cookiesUtils';
-import image from '/images/IMG_0183-nobg.png';
 import UploadPhoto from './UploadPhoto';
 import Contact from './pages/Contact';
+import BgImage from './components/general/BgImage';
 
 
 const NoPage = () => {
-  return (
-    <div className=" text-classicwhite bg-cover bg-[url('/images/sky.JPG')] h-screen">
-      <div className="pt-[20vh] flex flex-col items-center gap-10 text-black">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-6xl">OoOops!</p>
-          <p className="text-lg  opacity-80">Her er det dessverre ingen side å hente!</p>
+    return (
+        <div className=" text-classicwhite bg-cover bg-[url('/images/sky.JPG')] h-screen">
+            <div className="pt-[20vh] flex flex-col items-center gap-10 text-black">
+                <div className="flex flex-col items-center gap-4">
+                    <p className="text-6xl">OoOops!</p>
+                    <p className="text-lg  opacity-80">Her er det dessverre ingen side å finne!</p>
+                </div>
+                <div>
+                    <Link to="/">
+                        <Button variant={"outline"} className="text-lg border-2 border-black hover:text-white hover:bg-black px-10 py-6">Gå hjem</Button>
+                    </Link>
+                </div>
+                <img src="/images/IMG_0229-nobg.png" alt="Fant ikke bildet :(" className=" h-64 bg-cover" />
+            </div>
         </div>
-        <div>
-          <Link to="/">
-            <Button variant={"outline"} className="text-lg border-2 border-black hover:text-white hover:bg-black px-10 py-6">Gå hjem</Button>
-          </Link>
-        </div>
-      <img src={image} className=" h-64 bg-cover" />
-      </div>
-    </div>
-  )
+    )
 }
 
 
 const Layout = () => {
-  return (
-    <>
-    <Navbar />
-    {/* <BgImage image="darkened/IMG_0220-darken.JPG" right={50} /> */}
-    <Outlet />
-    </>
-  );
+    return (
+        <>
+        <Navbar />
+        <BgImage image="IMG_0220.JPG" right={50} brightness={65} />
+        <Outlet />
+        </>
+    );
 }
 
 type ContextType = {

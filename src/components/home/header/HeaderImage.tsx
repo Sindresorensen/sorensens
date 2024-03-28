@@ -22,8 +22,6 @@ export function HeaderImage() {
         };
     }, []);
 
-    return (
-        <BgImage image="darkened/IMG_0193-darken.JPG" opacity={opacity} />
-    );
+    return <BgImage image="IMG_0193.JPG" opacity={opacity} brightness={60} />
 }
 
