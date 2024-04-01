@@ -1,7 +1,14 @@
 import "@/App.css";
 import NavButton from "@/components/general/nav-button/nav-button";
 import { Link } from "react-router-dom";
-import { ArrowUpTrayIcon, Bars3Icon, EnvelopeIcon, GiftIcon, HomeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { 
+    ArrowUpTrayIcon, 
+    Bars3BottomRightIcon, 
+    EnvelopeIcon, 
+    GiftIcon, 
+    HomeIcon, 
+    PhoneIcon 
+} from "@heroicons/react/24/outline";
 import { useContext, useEffect, useState } from "react";
 import LanguageToggle from "../home/header/LanguageToggle";
 import SaveTheDate from "../home/header/SaveTheDate";
@@ -71,7 +78,7 @@ const HamburgerMenu = ({isNynorsk}: {isNynorsk: boolean}) => {
         <Sheet>
             <SheetTrigger>
                 <div className=" z-50 w-10 h-10 flex items-center justify-center" >
-                    <Bars3Icon className="h-8 text-white" />
+                    <Bars3BottomRightIcon className="h-8 text-white" />
                 </div>
             </SheetTrigger>
             <SheetContent>
