@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Response from './pages/Response';
 import { findIsNynorsk } from './lib/utils';
 import { setLanguageCookie } from './lib/cookiesUtils';
-import UploadPhoto from './UploadPhoto';
+import UploadPhoto from './pages/UploadPhoto';
 import Contact from './pages/Contact';
 import BgImage from './components/general/BgImage';
 

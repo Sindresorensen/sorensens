@@ -1,4 +1,4 @@
-import Title from "./components/general/Title";
+import Title from "../components/general/Title";
 
 
 export default function UploadPhoto() {
