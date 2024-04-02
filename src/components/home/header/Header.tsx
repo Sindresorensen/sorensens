@@ -1,6 +1,9 @@
+import { Button } from "@/components/ui/button";
 import { HeaderImage } from "./HeaderImage";
 import PageDownToggle from "./PageDownToggle";
 import SaveTheDate from "./SaveTheDate";
+import { Link } from "react-router-dom";
+import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 
 
 export function Header() {
@@ -19,8 +22,19 @@ export function Header() {
             </div>
 
             {/* Smaller screens */}
-            <div className="flex sm:hidden absolute w-full h-full items-end  bottom-40 justify-center z-20 ">
+            <div className="flex sm:hidden absolute w-full h-full items-end  bottom-40 justify-center z-20">
                 <SaveTheDate />
+            </div>
+
+            <div className="absolute hidden sm:block z-20 bottom-8 right-8">
+                <Link to="/last_opp">
+                    <Button variant={"outline"} className=" text-white py-6 px-8 sm:py-2 sm:px-4 text-lg sm:text-sm hover:text-black" >
+                        <div className="flex gap-3 items-center">
+                            <ArrowUpTrayIcon className="h-4" />
+                            <p>Last opp bilde</p>
+                        </div>
+                    </Button>
+                </Link>
             </div>
 
             <HeaderImage />

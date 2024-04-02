@@ -11,7 +11,7 @@ export default function UploadPhoto() {
                     <Title>Last opp bilde</Title>
                 </div>
 
-                <div className=" w-80 sm:w-96">
+                <div className=" w-80 sm:w-96 h-96">
                     <iframe
                         className="nettskjema-iframe w-full h-full rounded-md"
                         src="https://nettskjema.no/a/396591?embed=1"
