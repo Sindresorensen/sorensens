@@ -10,6 +10,7 @@ import { setLanguageCookie } from './lib/cookiesUtils';
 import UploadPhoto from './pages/UploadPhoto';
 import Contact from './pages/Contact';
 import BgImage from './components/general/BgImage';
+import Slideshow from './pages/Slideshow';
 
 
 const NoPage = () => {
@@ -69,6 +70,7 @@ export default function App() {
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/last_opp" element={<UploadPhoto />} />
         </Route>
+        <Route path="/slideshow" element={<Slideshow />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </LanguageContext.Provider>
