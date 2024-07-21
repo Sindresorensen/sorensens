@@ -59,7 +59,7 @@ const HamburgerMenuContentWithIcons = ({isNynorsk}: {isNynorsk: boolean}) => {
 
             <div className="flex justify-center mb-3">
                 <Close asChild>
-                    <Link to="/last_opp">
+                    <Link to="https://weduploader.com/upload/hKld5qOH47gBrc8t" target="_blank">
                         <Button variant={"outline"} className="border-black hover:bg-black hover:text-white py-6">
                             <div className="flex gap-3 items-center">
                                 <ArrowUpTrayIcon className="h-6 text-black" />

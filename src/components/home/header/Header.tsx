@@ -27,7 +27,7 @@ export function Header() {
             </div>
 
             <div className="absolute hidden sm:block z-20 bottom-8 right-8">
-                <Link to="/last_opp">
+                <Link to="https://weduploader.com/upload/hKld5qOH47gBrc8t" target="_blank">
                     <Button variant={"outline"} className=" text-white py-6 px-8 sm:py-2 sm:px-4 text-lg sm:text-sm hover:text-black" >
                         <div className="flex gap-3 items-center">
                             <ArrowUpTrayIcon className="h-4" />
