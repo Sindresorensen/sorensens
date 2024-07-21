@@ -125,3 +125,8 @@
     animation: fadeIn 1s forwards;
 }
 
+input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    accent-color: green;
+}
