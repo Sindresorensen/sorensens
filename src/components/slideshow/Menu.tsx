@@ -3,6 +3,8 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import DurationSelector from "./DurationSelector";
 import { secs } from "@/pages/Slideshow";
+import { Label } from "../ui/label";
+import TransitionSelector from "./TransitionSelector";
 
 
 type MenuProps = {
@@ -10,11 +12,13 @@ type MenuProps = {
     isFullscreen: boolean;
     seconds: number;
     setSeconds: (val: number) => void;
+    hasTransition: boolean;
+    setHasTransition: (val: boolean) => void;
     handleFullscreen: () => void;
     exit: () => void;
 }
 
-export default function Menu({ showMenu, isFullscreen, seconds, setSeconds, exit, handleFullscreen }: MenuProps) {
+export default function Menu({ showMenu, isFullscreen, seconds, setSeconds, hasTransition, setHasTransition, exit, handleFullscreen }: MenuProps) {
     
     return (
         <div className={cn(
@@ -33,6 +37,14 @@ export default function Menu({ showMenu, isFullscreen, seconds, setSeconds, exit
                         setSeconds={setSeconds}
                         className="bg-transparent text-white"
                     />
+
+                    <div className="flex gap-2 items-center ml-4">
+                        <TransitionSelector hasTransition={hasTransition} setHasTransition={setHasTransition} 
+                            className="border-white"
+                            iconClassName="text-white "
+                        />
+                        <Label htmlFor="transitionOn" className="text-white text-base font-normal cursor-pointer">Transition</Label>
+                    </div>
                 </div>
                 
                 <div className="cursor-pointer" onClick={handleFullscreen} >

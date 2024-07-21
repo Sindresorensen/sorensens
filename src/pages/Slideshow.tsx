@@ -5,6 +5,7 @@ import Slide from "@/components/slideshow/Slide";
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import DurationSelector from "@/components/slideshow/DurationSelector";
+import TransitionSelector from "@/components/slideshow/TransitionSelector";
 
 const filteredObjects = (files: File[]): File[] => {
     return files.filter( file => file.type.includes("image") );
@@ -17,6 +18,7 @@ export default function Slideshow() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [files, setFiles] = useState<string[]>([]);
     const [seconds, setSeconds] = useState(10);
+    const [hasTransition, setHasTransition] = useState(false);
 
     const [isShowingSlide, setIsShowingSlide] = useState(false);
 
@@ -29,7 +31,6 @@ export default function Slideshow() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const uploadedFiles = Array.from(e.target.files || []);
-        // TODO: filter on images only
         const filteredFiles = filteredObjects(uploadedFiles);
 
         const objectURLS = filteredFiles.map(file => URL.createObjectURL(file) )
@@ -56,16 +57,22 @@ export default function Slideshow() {
                             <XMarkIcon className="h-6 " />
                             <p className="text-slate-500 text-xs opacity-0 group-hover:opacity-100 transition">Fjern</p>
                         </div>
-                    </div>
+                </div>
 
-                    <div className="flex gap-3 items-center">
-                        <Label className="text-base">Interval:</Label>
-                        <DurationSelector 
-                            secs={secs}
-                            seconds={seconds}
-                            setSeconds={setSeconds}
-                            className="rounded-none bg-primary text-white w-24"
-                        />
+                    <div className="flex flex-col items-start gap-6 border-l pl-6 border-gray-400 py-4">
+                        <div className="flex gap-3 items-center">
+                            <Label className="text-base">Interval:</Label>
+                            <DurationSelector 
+                                secs={secs}
+                                seconds={seconds}
+                                setSeconds={setSeconds}
+                                className="rounded-none bg-primary text-white w-24"
+                            />
+                        </div>
+                        <div className="flex gap-2 items-center">
+                            <TransitionSelector hasTransition={hasTransition} setHasTransition={setHasTransition} />
+                            <Label htmlFor="transitionOn" className="text-base cursor-pointer">Transition</Label>
+                        </div>
                     </div>
 
                     <Button variant="outline" 
@@ -77,7 +84,13 @@ export default function Slideshow() {
                 </div>
             </div>
 
-            {isShowingSlide && <Slide images={files} seconds={seconds} setSeconds={setSeconds} setIsShowingSlides={setIsShowingSlide} />}
+            {isShowingSlide && <Slide images={files} 
+                seconds={seconds} 
+                setSeconds={setSeconds} 
+                hasTransition={hasTransition}
+                setHasTransition={setHasTransition}
+                setIsShowingSlides={setIsShowingSlide} 
+            />}
 
         </div>
     )

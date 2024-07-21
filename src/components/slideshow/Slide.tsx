@@ -16,10 +16,12 @@ type SlideProps = {
     images: string[];
     seconds: number;
     setSeconds: (val: number) => void;
+    hasTransition: boolean;
+    setHasTransition: (val: boolean) => void;
     setIsShowingSlides: (val: boolean) => void;
 }
 
-export default function Slide({ images, seconds, setSeconds, setIsShowingSlides }: SlideProps) {
+export default function Slide({ images, seconds, setSeconds, hasTransition, setHasTransition, setIsShowingSlides }: SlideProps) {
 
     const [isFullscreen, setIsFullscreen] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
@@ -119,13 +121,15 @@ export default function Slide({ images, seconds, setSeconds, setIsShowingSlides 
     return (
         <div className="z-20 absolute h-screen w-screen top-0 bg-black flex justify-center" onMouseMove={handleMouseMove}>
             <img src={images[curIndex]}
-                className={cn("m-6 max-w-full max-h-full", isFading ? " fade-out" : "fade-in")}
+                className={cn("m-6 max-w-full max-h-full", hasTransition && (isFading ? " fade-out" : "fade-in"))}
             />
 
             {/* Menu */}
             <Menu showMenu={showMenu}
                 seconds={seconds}
                 setSeconds={setSeconds}
+                hasTransition={hasTransition}
+                setHasTransition={setHasTransition}
                 isFullscreen={isFullscreen}
                 handleFullscreen={handleFullscreen} 
                 exit={exit}
