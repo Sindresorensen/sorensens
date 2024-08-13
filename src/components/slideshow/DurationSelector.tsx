@@ -15,7 +15,7 @@ export default function DurationSelector({ secs, seconds, setSeconds, className 
                 {seconds} s
             </SelectTrigger>
             <SelectContent className=" max-h-80">
-                {secs.map(i => <SelectItem value={i.toString()}>{i} s</SelectItem>)}
+                {secs.map(i => <SelectItem key={i.toString()} value={i.toString()}>{i} s</SelectItem>)}
             </SelectContent>
         </Select>
     )
