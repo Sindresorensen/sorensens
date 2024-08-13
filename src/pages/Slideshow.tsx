@@ -26,7 +26,6 @@ export default function Slideshow() {
 
             const imageUrls = imageFiles.map(file => URL.createObjectURL(file));
             setImages(imageUrls);
-            console.log(imageFiles)
         }
     }
 
