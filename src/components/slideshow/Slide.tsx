@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import Menu from "./Menu";
 
-const randint = (max: number) => Math.floor(Math.random() * max);
-
-const nextIndex = (usedIndexes: number[], max: number) => {
-    let i;
-    do {
-        i = randint(max);
-    } while (usedIndexes.includes(i));
-    return i;
+const shuffle = (arr: string[]) => {
+    for (let i = arr.length - 1; i > 0; i--) { 
+        const j = Math.floor(Math.random() * (i + 1)); 
+        [arr[i], arr[j]] = [arr[j], arr[i]]; 
+    }
+    return arr;
 }
 
 type SlideProps = {
@@ -27,33 +25,30 @@ export default function Slide({ images, seconds, setSeconds, hasTransition, setH
     const [showMenu, setShowMenu] = useState(true);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
-    const [curIndex, setCurIndex] = useState(randint(images.length - 1));
-    const [usedIndexes, setUsedIndexes] = useState([curIndex]);
+    const shuffledImages: string[] = useMemo(() => shuffle(images), [images]);
+    const [curIndex, setCurIndex] = useState<number>(0);
 
     // Animation
     const [isFading, setIsFading] = useState(false);
 
-    // Change image after seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            if (usedIndexes.length === images.length - 2) {
-                setUsedIndexes([]);
+            if (curIndex >= shuffledImages.length - 1) {
+                setCurIndex(0);
             }
             setIsFading(true);
         }, seconds * 1000);
         return () => clearInterval(interval);
-    }, [usedIndexes, seconds, images.length]);
+    }, [images.length, seconds]);
 
     useEffect(() => {
         if (isFading) {
-            const i = nextIndex(usedIndexes, images.length - 1);
             setTimeout(() => {
-                setCurIndex(i);
-                setUsedIndexes(prev => [...prev, i]);
+                setCurIndex(prevIndex => prevIndex + 1);
                 setIsFading(false);
-            }, 500); // Duration of fade-out animation
+            }, 500);    // Duration of fade-out animation
         }
-    }, [isFading, usedIndexes, images.length]);
+    }, [isFading, images.length])
 
     const enterFullscreen = () => {
         const elem = document.documentElement;
@@ -120,9 +115,9 @@ export default function Slide({ images, seconds, setSeconds, hasTransition, setH
 
     return (
         <div className="z-20 absolute h-screen w-screen top-0 bg-black flex justify-center" onMouseMove={handleMouseMove}>
-            <img src={images[curIndex]}
-                className={cn("m-6 max-w-full max-h-full", hasTransition && (isFading ? " fade-out" : "fade-in"))}
-            />
+            <img src={shuffledImages[curIndex]} className={cn("m-6 max-w-full max-h-full", 
+                hasTransition && (isFading ? " fade-out" : "fade-in")
+            )}/>
 
             {/* Menu */}
             <Menu showMenu={showMenu}
