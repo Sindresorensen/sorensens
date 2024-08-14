@@ -16,7 +16,7 @@ export default function Slideshow() {
     const [images, setImages] = useState<string[]>([]);
     const [isShowingSlide, setIsShowingSlide] = useState(false);
 
-    const sjekkFiler = (e: ChangeEvent<HTMLInputElement>) => {
+    const checkFiles = (e: ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
 
         if (files) {
@@ -35,7 +35,7 @@ export default function Slideshow() {
                 <div className=" flex flex-col items-center justify-center gap-12">
                     <div className="flex items-center gap-1.5">
                         <div>
-                            <input className="hidden" id="imageInput" type="file" multiple accept="image/*" onChange={sjekkFiler} />
+                            <input className="hidden" id="imageInput" type="file" multiple accept="image/*" onChange={checkFiles} />
                             {/* Label som bruker knapp-style */}
                             <label htmlFor="imageInput" className={cn(buttonVariants(), "cursor-pointer")}>Velg mappe</label>
                         </div>
