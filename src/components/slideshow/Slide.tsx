@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import Menu from "./Menu";
 
@@ -20,6 +20,9 @@ type SlideProps = {
 }
 
 export default function Slide({ images, seconds, setSeconds, hasTransition, setHasTransition, setIsShowingSlides }: SlideProps) {
+
+    // Used to prevent screen from sleeping
+    const wakeLock = useRef<WakeLockSentinel | null>(null);
 
     const [isFullscreen, setIsFullscreen] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
@@ -112,6 +115,49 @@ export default function Slide({ images, seconds, setSeconds, hasTransition, setH
         setIsShowingSlides(false);
         exitFullscreen();
     }
+
+    // Used to prevent screen from sleeping
+    useEffect(() => {
+        // Function to request wake lock
+        const requestWakeLock = async () => {
+            try {
+                if ('wakeLock' in navigator) {
+                    wakeLock.current = await navigator.wakeLock.request('screen');
+                    console.log('Wake Lock is active');
+
+                    wakeLock.current.addEventListener('release', () => {
+                        console.log('Wake Lock was released');
+                        requestWakeLock(); // Be om wake lock på nytt hvis den frigjøres
+                    });
+                } else {
+                    console.log('Wake Lock API is not supported in this browser.');
+                }
+
+            } catch (err) {
+                console.error(`${(err as Error).name}, ${(err as Error).message}`);
+            }
+        };
+
+        // Request the wake lock on component mount
+        requestWakeLock();
+
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'visible' && !wakeLock.current) {
+                requestWakeLock();
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        // Frigjør wake lock ved unmounting av komponenten
+        return () => {
+            if (wakeLock.current) {
+                wakeLock.current.release();
+                wakeLock.current = null;
+            }
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, []);
 
     return (
         <div className="z-20 absolute h-screen w-screen top-0 bg-black flex justify-center" onMouseMove={handleMouseMove}>
